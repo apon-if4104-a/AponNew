@@ -95,4 +95,15 @@ class Home extends CI_Controller
 		$this->Obat_Model->Update_Obat($idu);
 		$this->load->view('Home/HalamanAdmin');
 	}
+	public function adminlanding(){
+		$this->load->view('Home/headerLogin');
+		$this->load->view('Home/LandingUser');
+	}
+	public function historitrans(){
+		$this->load->view('Home/headerAdmin');
+		$this->load->view('Home/historyAdmin');
+	}
+	public function homeadmin(){
+		$this->load->view('Home/HalamanAdmin');
+	}
 }

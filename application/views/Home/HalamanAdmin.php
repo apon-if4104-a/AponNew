@@ -19,7 +19,7 @@
     }
 
     #Tombol {
-      padding: 20px;
+      padding: 50px 50px 50px;
     }
 
     .form {
@@ -45,7 +45,7 @@
   <div class="container">
     <div class="row">
       <div class="Input_obat col-md-3">
-        <center><button id="Tombol" data-toggle="modal" data-target="#Input_obat" type="button" class="btn btn-light" style="padding-bottom:80px; background-color:white; border:1px solid #f35410;">Input <span style="color:#f35410">Obat</span></button></center>
+        <center><button id="Tombol" data-toggle="modal" data-target="#Input_obat" type="button" class="btn btn-light" style="padding-bottom:75px; background-color:white; border:1px solid #f35410;">Input <span style="color:#f35410">Obat</span></button></center>
         <form action="<?php echo base_url(); ?>index.php/Home/InputObat" method="post">
           <!-- The Modal -->
           <div class="modal" id="Input_obat">
@@ -131,7 +131,7 @@
         </form>
       </div>
       <div class="Delete_obat col-md-3">
-        <center><button id="Tombol" data-toggle="modal" data-target="#Delete_obat" type="button" class="btn btn-light" style="padding-bottom:80px; background-color:white; border:1px solid #f35410;">Delete <span style="color:#f35410">Obat</span></button></center>
+        <center><button id="Tombol" data-toggle="modal" data-target="#Delete_obat" type="button" class="btn btn-light" style="background-color:white; border:1px solid #f35410; padding-bottom:75px;">Delete <span style="color:#f35410">Obat</span></button></center>
         <form action="<?php echo base_url(); ?>index.php/Home/DeleteObat" method="post">
           <!-- The Modal -->
           <div class="modal" id="Delete_obat">
@@ -173,7 +173,7 @@
         </form>
       </div>
       <div class="Update_obat col-md-3">
-        <center><button id="Tombol" data-toggle="modal" data-target="#Update_obat" type="button" class="btn btn-light" style="padding-bottom:80px; background-color:white; border:1px solid #f35410;">Update <span style="color:#f35410">Obat</span></button></center>
+        <center><button id="Tombol" data-toggle="modal" data-target="#Update_obat" type="button" class="btn btn-light" style=" background-color:white; border:1px solid #f35410; padding-bottom:75px;">Update <span style="color:#f35410">Obat</span></button></center>
         <form action="<?php echo base_url(); ?>index.php/Home/UpdateObat" method="post">
           <!-- The Modal -->
           <div class="modal" id="Update_obat">
@@ -259,8 +259,8 @@
         </form>
       </div>
       <div class="Histori_Transaksi col-md-3">
-        <center><button id="Tombol" type="button" class="btn btn-light" style="padding-bottom:80px; background-color:white; border:1px solid #f35410;">
-            <a href="#" id="histori"><span id="histori" style="color:black">Histori</span> <span id="histori" style="color:#f35410">Transaksi</span></a>
+        <center><button id="Tombol" type="button" class="btn btn-light" style="background-color:white; border:1px solid #f35410; padding-right:65px; padding-left: 65px;">
+            <a href="<?php echo base_url(); ?>index.php/Home/historitrans" id="histori"><span id="histori" style="color:black">Histori</span> <br> <span id="histori" style="color:#f35410">Transaksi</span></a>
           </button></center>
       </div>
     </div>

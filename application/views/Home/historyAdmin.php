@@ -20,9 +20,8 @@
     </style>
   </head>
   <body>
-    <?php include 'headerAdmin.php';?>
     <br>
-    <button type="button" class="btn btn-primary" style="float:left; margin-left:3%;">Kembali</button>
+    <button onclick="window.location = '<?php echo base_url(); ?>index.php/Home/homeadmin'" type="button" class="btn btn-primary" style="float:left; margin-left:3%;">Kembali</button>
     <br>
     <center>
         <h1 class="Hello" style="margin-top:30px;">History <span style="color:#f35410">Transaksi</span></h1>

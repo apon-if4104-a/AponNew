@@ -35,9 +35,7 @@
   <div class="container">
     <div class="row" style="margin-top:40px;">
       <div class="col">
-        <a class="unggah" href="<?= base_url(); ?>Home/Input_Resep">
           <button id="btnUnggah" type="button" name="button" class="btn btn-outline-light text-dark" style="border:3px solid #F35410;  margin:10px 20px 10px; width:15%; float:right;"><b style="color:#F35410;">Unggah Resep</b></button>
-        </a>
       </div>
     </div>
 

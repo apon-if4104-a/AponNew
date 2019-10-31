@@ -26,14 +26,15 @@
         .row{
           margin-top: 5px;
         }
+        #btndaftar:hover{
+          background-color: white;
+        }
     </style>
   </head>
   <body>
     <nav class="navbar" style="border-bottom:2px solid #13B1E2;">
-      <a class="navbar-brand" href="#">
         <img src="file:///C:/Users/asus/Pictures/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
-      </a>
-      <button id="btndaftar" type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:10px; width:100px;"><span style="color:#F35410;">Keluar</span></button>
+      <button onclick="window.location = '<?php echo base_url(); ?>index.php/Home/adminlanding'" id="btndaftar"type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:10px; width:100px;"><span style="color:#F35410;">Keluar</span></button>
     </nav>
 
   </body>

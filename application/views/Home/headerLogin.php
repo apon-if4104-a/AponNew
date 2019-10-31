@@ -18,7 +18,7 @@
     }
 
     #btndaftar:hover {
-      background-color: white;
+      background-color: grey;
     }
 
     #btnUnggah:hover {
@@ -101,12 +101,21 @@
             </div>
 
             <!-- Modal body -->
+            <form action="<?php echo base_url(); ?>index.php/user/daftaruser" method="post">
             <div class="modal-body">
+              <div class="Username" style="border:2px solid #7D7D7D; border-left:10px solid #13B1E2;">
+                <div class="formgroup">
+                  <label for="NamaLengkap" style="float:left; margin-left:10px;">Nama Lengkap</label>
+                  <br>
+                  <input id="NamaLengkap" type="text" class="form" name="Fullname" placeholder="Masukan Nama anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                </div>
+              </div>
+              <br>
               <div class="Username" style="border:2px solid #7D7D7D; border-left:10px solid #13B1E2;">
                 <div class="formgroup">
                   <label for="Nama" style="float:left; margin-left:10px;">Username</label>
                   <br>
-                  <input id="Nama" type="text" class="form" name="nama2" placeholder="Masukan Nama anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                  <input id="Nama" type="text" class="form" name="usernameuser" placeholder="Masukan Nama anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                 </div>
               </div>
               <br>
@@ -114,7 +123,7 @@
                 <div class="formgroup">
                   <label for="emailUSER" style="float:left; margin-left:10px;">Email</label>
                   <br>
-                  <input id="emailUSER" type="text" class="form" name="emailUsr" placeholder="Masukan Email anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                  <input id="emailUSER" type="email" class="form" name="emailusr" placeholder="Masukan Email anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                 </div>
               </div>
               <br>
@@ -122,7 +131,7 @@
                 <div class="formgroup">
                   <label for="NoHP" style="float:left; margin-left:10px;">No Handphone</label>
                   <br>
-                  <input id="NoHP" type="text" class="form" name="HP" placeholder="Masukan Nomor Handphone anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                  <input id="NoHP" type="text" class="form" name="hp" placeholder="Masukan Nomor Handphone anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                 </div>
               </div>
               <br>
@@ -130,7 +139,7 @@
                 <div class="formgroup">
                   <label for="pwd" style="float:left; margin-left:10px;">Password</label>
                   <br>
-                  <input type="password" class="form" id="pwd" name="pwd" placeholder="Masukan Password anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                  <input type="password" class="form" id="pwd" name="pwduser1" placeholder="Masukan Password anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                 </div>
               </div>
               <br>
@@ -138,7 +147,7 @@
                 <div class="formgroup">
                   <label for="pwd" style="float:left; margin-left:10px;">Ketik Ulang Password</label>
                   <br>
-                  <input type="password" class="form" id="pwd" name="pwd" placeholder="Masukan Password anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                  <input type="password" class="form" id="pwd" name="pwduser2" placeholder="Masukan Password anda" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                 </div>
               </div>
             </div>
@@ -147,8 +156,8 @@
             <div class="modal-footer" style="border:none">
               <button type="submit" class="btn" style="background-color:#13B1E2"><span style="color:white">Daftar</span></button>
             </div>
-
           </div>
+        </form>
         </div>
       </div>
 

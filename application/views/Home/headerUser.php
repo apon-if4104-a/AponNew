@@ -25,10 +25,14 @@
             margin-left:5px;"><span style="color:White;">Search</span></button>
           </div>
         </div>
-        <button id="Btnlogin"  type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:30px; background-color:#F35410; margin-top:-20px;"><span style="color:White;">Azhar</span></button>
+        <button onclick="logout()" id="Btnlogin"  type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:30px; background-color:#F35410; margin-top:-20px;"><span style="color:White;">Log Out</span></button>
         <button id="btndaftar" type="button" name="button" class="btn btn-secondary" style="margin-top:-20px; margin-left:20px; padding:15px 20px 20px; border-radius:50%; background-color:grey;"></button>
       </form>
     </nav>
-
+    <script>
+      function logout(){
+        window.location = "<?php echo base_url('index.php/TampilanAwal/logout');?>";
+      }
+    </script>
   </body>
 </html>

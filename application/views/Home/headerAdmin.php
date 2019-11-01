@@ -34,8 +34,12 @@
   <body>
     <nav class="navbar" style="border-bottom:2px solid #13B1E2;">
         <img src="file:///C:/Users/asus/Pictures/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
-      <button onclick="window.location = '<?php echo base_url(); ?>index.php/Home/adminlanding'" id="btndaftar"type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:10px; width:100px;"><span style="color:#F35410;">Keluar</span></button>
+      <button onclick="logout()" id="btndaftar"type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:10px; width:100px;"><span style="color:#F35410;">Keluar</span></button>
     </nav>
-
+    <script>
+      function logout(){
+        window.location = "<?php echo base_url('index.php/TampilanAwal/logout');?>";
+      }
+    </script>
   </body>
 </html>

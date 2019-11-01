@@ -57,20 +57,19 @@ class Home extends CI_Controller
 	}
 	public function InputObat()
 	{
-		//Input
-		$this->load->model('Obat_Model');
-		$this->form_validation->set_rules('IDObatI', 'IDObatI', 'integer');
-		$this->form_validation->set_rules('IDObatI', 'ID Obat', 'required');
-		$this->form_validation->set_rules('NamaObatI', 'Nama Obat', 'required');
-		$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'min_length[2]');
-		$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'integer');
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('Home/HalamanAdmin');
-		} else {
-			$this->Obat_Model->Input_Obat();
-			$this->session->set_flashdata('flash', 'Ditambahkan');
-			$this->load->view('Home/HalamanAdmin');
-		}
+			//Input
+			$this->form_validation->set_rules('IDObatI', 'ID Obat', 'integer');
+			$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'min_length[2]');
+			$this->form_validation->set_rules('HargaObatI', 'Harga Obat', 'integer');
+			if ($this->form_validation->run() == false) {
+				$this->session->set_flashdata('gagal', 'Ditambahkan');
+				$this->load->view('Home/HalamanAdmin');
+			} else {
+				$this->load->model('Obat_Model');
+				$this->Obat_Model->Input_Obat();
+				$this->session->set_flashdata('berhasil', 'Ditambahkan');
+				$this->load->view('Home/HalamanAdmin');
+			}
 	}
 
 	public function DeleteObat()

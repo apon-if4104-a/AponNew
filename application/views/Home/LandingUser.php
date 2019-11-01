@@ -33,6 +33,30 @@
 
 <body>
   <div class="container">
+  <?php if($this->session->flashdata('passwordsalah')): ?>
+    <div role="alert" class="alert alert-success alert-dismissible fade show">
+      <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+        <span aria-hidden="true" class="fa fa-times"></span>
+      </button>
+      <p><?php echo $this->session->flashdata('passwordsalah')?></p>
+     </div>
+  <?php endif;?>
+  <?php if($this->session->flashdata('usernamesalah')):?>
+    <div role="alert" class="alert alert-success alert-dismissible fade show">
+      <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+        <span aria-hidden="true" class="fa fa-times"></span>
+      </button>
+      <p><?php echo $this->session->flashdata('usernamesalah')?></p>
+    </div>
+  <?php endif;?>
+  <?php if($this->session->flashdata('pwdgasama')):?>
+    <div role="alert" class="alert alert-success alert-dismissible fade show">
+      <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+        <span aria-hidden="true" class="fa fa-times"></span>
+      </button>
+      <p><?php echo $this->session->flashdata('pwdgasama')?></p>
+    </div>
+  <?php endif;?>
     <div class="row" style="margin-top:40px;">
       <div class="col">
           <button id="btnUnggah" type="button" name="button" class="btn btn-outline-light text-dark" style="border:3px solid #F35410;  margin:10px 20px 10px; width:15%; float:right;"><b style="color:#F35410;">Unggah Resep</b></button>

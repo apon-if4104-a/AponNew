@@ -14,4 +14,21 @@ class User_Model extends CI_Model
 
         $this->db->insert('user', $user);
     }
+    
+    public function login_user($username,$pwd)
+    {
+        $user = [
+            "username" => $username,
+            "passwod" => $pwd
+        ];
+        return $this->db->get_where('user', $user);     
+    }
+    public function cek_username($username)
+    {
+        $user = [
+            "username" => $username
+        ];
+        return $this->db->get_where('user', $user);
+    }
+
   }

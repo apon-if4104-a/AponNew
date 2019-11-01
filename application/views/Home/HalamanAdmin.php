@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,6 +8,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="sweetalert2.all.min.js"></script>
+  <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+  <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
   <title>Apon</title>
   <?php include 'headerAdmin.php'; ?>
 
@@ -17,19 +20,15 @@
       width: 3000px;
       height: 1000px;
     }
-
     #Tombol {
       padding: 50px 50px 50px;
     }
-
     .form {
       outline: none;
     }
-
     .row {
       margin-top: 5px;
     }
-
     #histori:hover {
       text-decoration: none;
     }
@@ -39,6 +38,38 @@
 <body>
 
   <center>
+  <div class="container">
+      <?php if ($this->session->flashdata('berhasil')) : ?>
+        <script>
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+          })
+
+          Toast.fire({
+            type: 'success',
+            title: 'Signed in successfully'
+          })
+        </script>
+      <?php endif; ?>
+      <?php if ($this->session->flashdata('gagal')) : ?>
+        <script>
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000
+          })
+
+          Toast.fire({
+            type: 'error',
+            title: 'Data unsuccessfully'
+          })
+        </script>
+      <?php endif; ?>
+    </div>
     <h1 class="Hello" style="margin-top:30px;">Hello <span style="color:#f35410">Admin!</span></h1>
     <hr size="30px" width="50%" style="background-color:#f35410">
   </center>

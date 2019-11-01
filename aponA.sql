@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 28, 2019 at 04:21 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.1.32
+-- Host: localhost
+-- Waktu pembuatan: 01 Nov 2019 pada 10.24
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `apon`
+-- Database: `aponA`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `obat`
+-- Struktur dari tabel `obat`
 --
 
 CREATE TABLE `obat` (
@@ -38,10 +38,11 @@ CREATE TABLE `obat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `obat`
+-- Dumping data untuk tabel `obat`
 --
 
 INSERT INTO `obat` (`ID_Obat`, `Nama_Obat`, `Keterangan_Obat`, `Harga_Obat`, `Deskripsi_Obat`, `Foto_Obat`) VALUES
+(33, 'bebasa', 'anjay', '892', '                              shshshsh', 0x466c6f7743686172742e706e67),
 (23131, 'askdba', 'asjkdbna', '123', 'aljsdna                            ', ''),
 (21312312, '12312312', '1231231', '12312312', '                            1231231', ''),
 (23131231, '2311231', '412343e24', '23131', '                        21312312    ', ''),
@@ -50,7 +51,7 @@ INSERT INTO `obat` (`ID_Obat`, `Nama_Obat`, `Keterangan_Obat`, `Harga_Obat`, `De
 -- --------------------------------------------------------
 
 --
--- Table structure for table `obat_resep`
+-- Struktur dari tabel `obat_resep`
 --
 
 CREATE TABLE `obat_resep` (
@@ -62,7 +63,7 @@ CREATE TABLE `obat_resep` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transaksi`
+-- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -78,7 +79,7 @@ CREATE TABLE `transaksi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -90,67 +91,36 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`username`, `namaUser`, `email`, `noHP`, `passwod`) VALUES
+('admin', 'Admin Ganteng', 'adminganteng@gmail.com', 812121212, 'admin123'),
+('laz', 'Lazuardi', 'laz@gmail.com', 812121, 'laz');
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `obat`
+-- Indeks untuk tabel `obat`
 --
 ALTER TABLE `obat`
   ADD PRIMARY KEY (`ID_Obat`);
 
 --
--- Indexes for table `obat_resep`
+-- Indeks untuk tabel `obat_resep`
 --
 ALTER TABLE `obat_resep`
   ADD PRIMARY KEY (`ID_Resep`);
 
 --
--- Indexes for table `transaksi`
+-- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`idtransaksi`),
   ADD KEY `FK_Transaksi1` (`ID_Obat`),
-  ADD KEY `FK_Transaksi2` (`username`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `obat`
---
-ALTER TABLE `obat`
-  MODIFY `ID_Obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2147483648;
-
---
--- AUTO_INCREMENT for table `obat_resep`
---
-ALTER TABLE `obat_resep`
-  MODIFY `ID_Resep` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `transaksi`
---
-ALTER TABLE `transaksi`
-  MODIFY `idtransaksi` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD CONSTRAINT `FK_Transaksi1` FOREIGN KEY (`ID_Obat`) REFERENCES `obat` (`ID_Obat`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_Transaksi2` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE;
+  ADD KEY `FK_Transaksi2` (`username`(191));
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

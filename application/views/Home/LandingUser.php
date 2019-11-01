@@ -59,7 +59,9 @@
   <?php endif;?>
     <div class="row" style="margin-top:40px;">
       <div class="col">
-          <button id="btnUnggah" type="button" name="button" class="btn btn-outline-light text-dark" style="border:3px solid #F35410;  margin:10px 20px 10px; width:15%; float:right;"><b style="color:#F35410;">Unggah Resep</b></button>
+          <a href="<?php echo base_url('index.php/Home/Input_Resep/') ?>">
+            <button id="btnUnggah" type="button" name="button" class="btn btn-outline-light text-dark" style="border:3px solid #F35410;  margin:10px 20px 10px; width:15%; float:right;"><b style="color:#F35410;">Unggah Resep</b></button>
+          </a>
       </div>
     </div>
 
@@ -69,31 +71,19 @@
       </div>
     </div>
 
-    <div class="row" style="margin-bottom:40px;">
-      <div class="col-sm-3" style="margin-right:80px; margin-left:20px;">
-        <div class="card" style="width:105%; border:2px solid #13B1E2;">
-          <div class="card-header" style="background-color:white; border:none;"><img src="file:///C:/Users/asus/Pictures/Nelco.png" alt="Icon"></div>
-          <div class="card-body" style=" border:none"><b>Nellco Syrup</b></div>
-          <div class="card-footer" style="color:#F35410; background-color:white; border:none"><b>Rp. 35.000</b></div>
-          <div class="card-footer" style="background-color:white; border:none">Obat Batuk</div>
-        </div>
-      </div>
-      <div class="col-sm-3" style="margin-right:80px;">
-        <div class="card" style="width:105%;; border:2px solid #13B1E2;">
-          <div class="card-header" style="background-color:white; border:none"><img src="file:///C:/Users/asus/Pictures/Nelco.png" alt="Icon"></div>
-          <div class="card-body" style="border:none"><b>Nellco Syrup</b></div>
-          <div class="card-footer" style="color:#F35410; background-color:white; border:none"><b>Rp. 35.000</b></div>
-          <div class="card-footer" style="background-color:white; border:none">Obat Batuk</div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="card" style="width:105%; border:2px solid #13B1E2;">
-          <div class="card-header" style="background-color:white;border:none"><img src="file:///C:/Users/asus/Pictures/Nelco.png" alt="Icon"></div>
-          <div class="card-body" style="border:none"><b>Nellco Syrup</b></div>
-          <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b>Rp. 35.000</b></div>
-          <div class="card-footer" style="background-color:white;border:none">Obat Batuk</div>
-        </div>
-      </div>
+    <div class="container" style="margin-bottom:40px;">
+            <?php foreach ($BanyakObat as $P) : ?>
+                <div class="box">
+                    <a href="<?php echo base_url('index.php/Home/PilihObat/' . $P['ID_Obat']) ?>">
+                        <div class="card" style="width:105%; border:2px solid #13B1E2;">
+                            <div class="card-header" style="background-color:white;border:none"><img src="file:///C:/Users/asus/Pictures/Nelco.png" alt="Icon"></div>
+                            <div class="card-body" style="border:none"><b><?php echo $P['Nama_Obat'] ?></b></div>
+                            <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b><?php echo $P['Harga_Obat'] ?></b></div>
+                            <div class="card-footer" style="background-color:white;border:none"><?php echo $P['Keterangan_Obat'] ?></div>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach; ?>
     </div>
 
   </div>

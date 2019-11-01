@@ -15,8 +15,16 @@ class Home extends CI_Controller
 		$table = 'obat';
 		$hasil = $this->Obat_Home->Get_All($table);
 		$data['BanyakObat'] = $hasil;
-		$this->load->view('Home/headerLogin', $data);
-		$this->load->view('Home/LandingUser', $data);
+		if ($this->session->userdata('login')) {
+			$this->load->view('Home/headerUser');
+			$this->load->view('Home/LandingUser', $data);
+			// code statements My Account
+		}
+		else
+		{
+			$this->load->view('Home/headerLogin');
+			$this->load->view('Home/LandingUser', $data);
+		}
 	}
 
 	public function Input_Resep()
@@ -45,7 +53,12 @@ class Home extends CI_Controller
 		$hasil = $this->Obat_Home->Get_Detail($table, $Id);
 		$data['bat'] = $hasil;
 		if ($data) {
-			$this->load->view('Home/Pilih Obat', $data);
+			if ($this->session->userdata('logged_in')){
+				$this->load->view('Home/Pilih Obat Login', $data);
+			}else{
+				$this->load->view('Home/Pilih Obat belomLogin', $data);
+			}
+			
 		} else {
 			$this->load->view('Home/InputResep');
 		}

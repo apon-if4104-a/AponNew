@@ -9,7 +9,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Apon</title>
-    <?php include 'headerPembayaran.php';?>
     <style>
       p{
         text-align:center;
@@ -19,13 +18,14 @@
   </head>
   <body>
     <h4 style="margin-left:6%; margin-top:2%;">Pembayaran <span style="color:#F35410">Transfer</span></h4>
+    <h6 style="margin-left:6%; margin-top:2%; font-size:15px">* Bukti Pembayaran di atm harap dibawa untuk tanda bukti</h6>
     <div class="container" style="border:1px solid #F35410; margin-top:3%; border-radius:3px; margin-bottom:3%;">
       <div class="row" style="background-color:#F35410; padding-top:5px;">
         <div class="col-sm-8">
           <p>Jumlah Yang Harus Dibayar</p>
         </div>
         <div class="col-sm-4">
-          <p>EXAMPLE</p>
+          <p><?php echo $total ?></p>
         </div>
       </div>
     <div class="row">
@@ -38,17 +38,17 @@
         </div>
         <div class="row">
           <div class="col-sm-5">
-            <img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Group 15.png" alt="" style="width:250%;">
+            <img src="<?php echo base_url(); ?>Asset/group 15.png" alt="" style="width:250%;">
           </div>
         </div>
         <div class="row">
           <div class="col-sm-5">
-            <img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Group 16.png" alt="" style="width:250%; margin-top:5%; margin-bottom:5%;">
+            <img src="<?php echo base_url(); ?>Asset/group 16.png" alt="" style="width:250%; margin-top:5%; margin-bottom:5%;">
           </div>
         </div>
         <div class="row">
           <div class="col-sm-5">
-            <img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Group 17.png" alt="" style="width:250%; margin-bottom:5%;">
+            <img src="<?php echo base_url(); ?>Asset/group 17.png" alt="" style="width:250%; margin-bottom:5%;">
           </div>
         </div>
       </div>
@@ -60,12 +60,12 @@
         </div>
         <div class="row">
           <div class="col">
-            <center><img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\gambar 1.png" alt="" style="margin-top:3%; width:200px; margin-top:5%;"></center>
+            <center><img src="<?php echo base_url(); ?>Asset/gambar 1.png" alt="" style="margin-top:3%; width:200px; margin-top:5%;"></center>
           </div>
         </div>
         <div class="row">
           <div class="col">
-            <center><img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Apotek K-24, Jl. Karawitan No.60, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264.png" alt="" style="margin-top:15%; margin-bottom:3%; width:300px;"></center>
+            <center><img src="<?php echo base_url(); ?>Asset/Alamat.png" alt="" style="margin-top:15%; margin-bottom:3%; width:300px;"></center>
           </div>
         </div>
       </div>

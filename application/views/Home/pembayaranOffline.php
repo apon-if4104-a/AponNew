@@ -9,7 +9,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Apon</title>
-    <?php include 'headerPembayaran.php';?>
     <style>
       p{
         text-align:center;
@@ -25,7 +24,7 @@
           <p>Jumlah Yang Harus Dibayar</p>
         </div>
         <div class="col-sm-4">
-          <p>EXAMPLE</p>
+          <p><?php echo $total ?></p>
         </div>
       </div>
       <div class="row">
@@ -35,12 +34,12 @@
       </div>
       <div class="row">
         <div class="col">
-          <center><img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\gambar 1.png" alt="" style="margin-top:3%"></center>
+          <center><img src="<?php echo base_url() ;?>Asset/gambar 1.png" alt="" style="margin-top:3%"></center>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <center><img src="E:\My Data\Test codingan\HTML\HTML Impal\Asset\Apotek K-24, Jl. Karawitan No.60, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264.png" alt="" style="margin-top:3%; margin-bottom:3%""></center>
+          <center><img src="<?php echo base_url() ;?>Asset/Alamat.png" style="margin-top:3%; margin-bottom:3%"></center>
         </div>
       </div>
     </div>

@@ -10,7 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Apon</title>
-    <?php include 'headerLogin.php';?>
     <style>
       th{
         style:border:1px solid #f35410 ;
@@ -22,7 +21,7 @@
   </head>
   <body>
     <br>
-    <button type="button" class="btn btn-primary" style="float:left; margin-left:3%;">Kembali</button>
+    <button onclick="profile()" type="button" class="btn btn-primary" style="float:left; margin-left:3%;">Kembali</button>
     <br>
     <center>
         <h1 class="Hello" style="margin-top:30px;">History <span style="color:#f35410">Transaksi</span></h1>
@@ -36,17 +35,19 @@
             <th>Jumlah</th>
             <th>Total Harga</th>
             <th>Metode Pembayaran</th>
-            <th>Status</th>
+            <th>Status</th>            
           </tr>
         </thead>
         <tbody>
+        <?php foreach ($histori as $P) : ?>
           <tr>
-            <td>Example</td>
-            <td>Example</td>
-            <td>Example</td>
-            <td>Example</td>
-            <td><button data-toggle="modal" data-target="#Confir" type="button" name="button" class="btn btn-primary">Example</button></td>
+            <td><?php echo $P['ID_Obat']?></td>
+            <td><?php echo $P['Jumlah']?></td>
+            <td><?php echo $P['Total_Harga']?></td>
+            <td><?php echo $P['Metode_Pembayaran']?></td>
+            <td><?php echo $P['Status']?></td>
           </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
@@ -72,5 +73,10 @@
         </div>
       </div>
     </div>
+    <script>
+      function back(){
+        window.location = "<?php echo base_url('index.php/user/profile');?>";
+      }
+    </script>
   </body>
 </html>

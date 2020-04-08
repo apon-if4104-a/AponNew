@@ -31,21 +31,25 @@
       <table class="table">
         <thead>
           <tr>
+            <th>ID Transaksi</th>
             <th>Nama Users</th>
-            <th>Nama Obat</th>
+            <th>ID Obat</th>
             <th>Jumlah</th>
             <th>Metode Pembayaran</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
+        <?php foreach ($histori as $P) : ?>
           <tr>
-            <td>Example</td>
-            <td>Example</td>
-            <td>Example</td>
-            <td>Example</td>
-            <td><button data-toggle="modal" data-target="#Confir" type="button" name="button" class="btn btn-primary">Example</button></td>
+            <td><?php echo $P['idtransaksi']?></td>
+            <td><?php echo $P['namaUser']?></td>
+            <td><?php echo $P['ID_Obat']?></td>
+            <td><?php echo $P['Jumlah']?></td>
+            <td><?php echo $P['Metode_Pembayaran']?></td>
+            <td><a href="" data-toggle="modal" data-target="#Confir"><?php echo $P['Status']?></a></td>
           </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
@@ -63,7 +67,7 @@
           <!-- Modal body -->
           <div class="modal-body">
             <center>
-              <button type="submit" class="btn btn-light" data-dismiss="modal" style="margin-right:10%; background-color:#F35410; padding:5px 20px 10px;"><span style="color:white">YA</span></button>
+              <button type="submit" onclick = "changeStatus()" class="btn btn-light" data-dismiss="modal" style="margin-right:10%; background-color:#F35410; padding:5px 20px 10px;"><span style="color:white">YA</span></button>
               <button id="TDKbtn" type="button" class="btn btn-light" data-dismiss="modal" style="border:1px solid #13B1E2;"><span style="color:#13B1E2;">Tidak</span></button>
             </center>
           </div>
@@ -71,5 +75,13 @@
         </div>
       </div>
     </div>
+    <script>
+  function changeStatus(){
+    var id = <?php echo $P['idtransaksi']?>;
+    window.location = "<?php echo base_url();?>/index.php/Home/changeStatus?id="+id
+  }
+   
+  </script>
   </body>
+
 </html>

@@ -14,7 +14,6 @@
   <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
   <title>Apon</title>
   <?php include 'headerAdmin.php'; ?>
-
   <style>
     .Input_obat {
       width: 3000px;
@@ -50,7 +49,7 @@
 
           Toast.fire({
             type: 'success',
-            title: 'Signed in successfully'
+            title: 'Data Sudah Terupload'
           })
         </script>
       <?php endif; ?>
@@ -65,7 +64,7 @@
 
           Toast.fire({
             type: 'error',
-            title: 'Data unsuccessfully'
+            title: 'Data gagal terupload'
           })
         </script>
       <?php endif; ?>
@@ -77,7 +76,7 @@
     <div class="row">
       <div class="Input_obat col-md-3">
         <center><button id="Tombol" data-toggle="modal" data-target="#Input_obat" type="button" class="btn btn-light" style="padding-bottom:75px; background-color:white; border:1px solid #f35410;">Input <span style="color:#f35410">Obat</span></button></center>
-        <form action="<?php echo base_url(); ?>index.php/Home/InputObat" method="post">
+        <form action="<?php echo base_url(); ?>index.php/Home/InputObat" method="post" enctype="multipart/form-data">
           <!-- The Modal -->
           <div class="modal" id="Input_obat">
             <div class="modal-dialog">
@@ -94,7 +93,7 @@
                   <div class="card" style="float:right; padding-bottom:90px; padding-left:10px;">
                     <div class="card-body">
                       <h5>Foto Obat</h5>
-                      <input id="alamat" type="file" name="FotoObatI" value="" style=" border:none; ">
+                      <input id="alamat" type="file" name="FotoObat" value="" style=" border:none; ">
                     </div>
                   </div>
                   <div class="row">
@@ -137,6 +136,17 @@
                           <label for="ket" style="float:left; margin-left:10px;">Harga Obat</label>
                           <br>
                           <input type="text" class="form" id="ket" name="HargaObatI" placeholder="Masukan Harga Obat" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <div class="Pass" style="border:2px solid #7D7D7D; border-left:10px solid #13B1E2; width:400px;">
+                        <div class="formgroup">
+                          <label for="StokUsinptr" style="float:left; margin-left:10px;">Stok Obat</label>
+                          <br>
+                          <input type="text" class="form" id="StokUsrinpt" name="StokObatInpt" placeholder="Stok Obat" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                         </div>
                       </div>
                     </div>
@@ -265,6 +275,17 @@
                           <label for="ket" style="float:left; margin-left:10px;">Harga Obat</label>
                           <br>
                           <input type="text" class="form" id="ket" name="HargaObatU" placeholder="Masukan Harga Obat" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <div class="Pass" style="border:2px solid #7D7D7D; border-left:10px solid #13B1E2; width:400px;">
+                        <div class="formgroup">
+                          <label for="StokUpdt" style="float:left; margin-left:10px;">Stok Obat</label>
+                          <br>
+                          <input type="text" class="form" id="StokUpdt" name="StokObatUpdate" placeholder="Stok Obat" required style="border:none; color:#13B1E2; width:96%; margin-left:10px;">
                         </div>
                       </div>
                     </div>

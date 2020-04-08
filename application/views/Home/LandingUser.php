@@ -15,17 +15,27 @@
       margin: 0px;
       padding: 0px;
     }
-
     #btndaftar:hover {
       background-color: white;
     }
-
     #btnUnggah:hover {
       background-color: white;
     }
-
     .form {
       outline: none;
+    }
+    #KatalogObat:hover{
+      text-decoration: none;
+    }
+    .container{
+      max-width : 1000px;
+    }
+    .box{
+      margin : 5px;
+      padding : 5px;
+      min-width : 300px;
+      position : relative;
+      float : left;
     }
   </style>
 
@@ -33,7 +43,7 @@
 
 <body>
   <div class="container">
-  <?php if($this->session->flashdata('passwordsalah')): ?>
+   <?php if($this->session->flashdata('passwordsalah')): ?>
     <div role="alert" class="alert alert-success alert-dismissible fade show">
       <button aria-label="Close" data-dismiss="alert" class="close" type="button">
         <span aria-hidden="true" class="fa fa-times"></span>
@@ -57,13 +67,6 @@
       <p><?php echo $this->session->flashdata('pwdgasama')?></p>
     </div>
   <?php endif;?>
-    <div class="row" style="margin-top:40px;">
-      <div class="col">
-          <a href="<?php echo base_url('index.php/Home/Input_Resep/') ?>">
-            <button id="btnUnggah" type="button" name="button" class="btn btn-outline-light text-dark" style="border:3px solid #F35410;  margin:10px 20px 10px; width:15%; float:right;"><b style="color:#F35410;">Unggah Resep</b></button>
-          </a>
-      </div>
-    </div>
 
     <div class="row">
       <div class="col">
@@ -72,20 +75,21 @@
     </div>
 
     <div class="container" style="margin-bottom:40px;">
-            <?php foreach ($BanyakObat as $P) : ?>
-                <div class="box">
-                    <a href="<?php echo base_url('index.php/Home/PilihObat/' . $P['ID_Obat']) ?>">
-                        <div class="card" style="width:105%; border:2px solid #13B1E2;">
-                            <div class="card-header" style="background-color:white;border:none"><img src="file:///C:/Users/asus/Pictures/Nelco.png" alt="Icon"></div>
-                            <div class="card-body" style="border:none"><b><?php echo $P['Nama_Obat'] ?></b></div>
-                            <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b><?php echo $P['Harga_Obat'] ?></b></div>
-                            <div class="card-footer" style="background-color:white;border:none"><?php echo $P['Keterangan_Obat'] ?></div>
-                        </div>
-                    </a>
-                </div>
-            <?php endforeach; ?>
+      <?php foreach ($BanyakObat as $P) : ?>
+        <div class="box">
+          <div class="card" style="width:105%; border:2px solid #13B1E2;">
+            <div class="card-header" style="background-color:white;border:none">
+              <?php 
+                echo '<img src=data:image;base64,'.$P['foto'].' alt="Icon"/ style="max-width:100px; max-height: 100px;">';
+              ?>
+            </div>
+            <div class="card-body" style="border:none"><b style="color:#13B1E2"><?php echo $P['Nama_Obat'] ?></b></div>
+            <div class="card-footer" style="color:#F35410; background-color:white;border:none"><b><?php echo $P['Harga_Obat'] ?></b></div>
+            <div class="card-footer" style="background-color:white;border:none"><?php echo $P['Keterangan_Obat'] ?></div>
+          </div>
+        </div>
+      <?php endforeach; ?>
     </div>
-
   </div>
 </body>
 

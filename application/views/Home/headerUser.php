@@ -9,29 +9,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Apon</title>
+    <style media="screen">
+      #SearchBar{
+        outline: none;
+      }
+      #SearchBar:focus{
+        border-bottom: 2px solid #13B1E2;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar" style="border-bottom:2px solid #13B1E2;">
-      <form class="form-inline" action="">
-        <a class="navbar-brand" href="#">
-         <img src="file:///C:/Users/asus/Pictures/Apon.png" alt="Logo" style="width:100px; padding-left:20px; height:40px; margin-top:-20px;">
-        </a>
-        <div class="input-group mb-3 input-group-lg" style="margin-left:50px; margin-right:50px;">
-          <div class="input-group-prepend">
-            <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:45px; border:1px solid #13B1E2;
-            border-right:none; padding-top:5px; padding-bottom:5px;">
-            <input class="form" type="text" placeholder="Cari Obat" style="border:1px solid #13B1E2; border-left:none; width:700px; padding-top:5px; padding-bottom:5px;">
-            <button class="btn btn-outline-light text-dark" type="submit" style="background-color:#F35410; border:1px solid #F35410; padding-top:5px; padding-bottom:5px; border-radius:3px;
-            margin-left:5px;"><span style="color:White;">Search</span></button>
-          </div>
+    <div class="container">
+      <div class="row" >
+        <div class="col-sm-2">
+          <a onclick="back()" style=" cursor: pointer">
+           <img src="<?php echo base_url() ;?>Asset/Apon.png" alt="Logo" style="width:100px; height:40px; margin-top:7px;">
+          </a>
         </div>
-        <button onclick="logout()" id="Btnlogin"  type="button" name="button" class="btn btn-outline-light text-dark" style="border:1px solid #F35410; margin-left:30px; background-color:#F35410; margin-top:-20px;"><span style="color:White;">Log Out</span></button>
-        <button id="btndaftar" type="button" name="button" class="btn btn-secondary" style="margin-top:-20px; margin-left:20px; padding:15px 20px 20px; border-radius:50%; background-color:grey;"></button>
-      </form>
-    </nav>
+        <div class="col-sm-8">
+          <center>
+          <form action="<?php echo base_url();?>index.php/Home/searchSudahLogin" method = "post">
+              <div class="form-inline my-2 my-lg-0">
+                <img src="https://www.gshiftlabs.com/wp-content/uploads/2016/03/search19-300x203.png" alt="Icon" style="width:40px; margin-top:7px;position: relative;"/>
+                <input id="" name= "yangdicari" type="text" placeholder="Cari Obat" style="border:none; width:75%; margin-top:7px;position: relative;"></input>
+                <input class="btn btn-outline-light" type="submit" value="Search" style="background-color:#F35410; border:1px solid #F35410; border-radius:3px; margin-top:7px;position: relative;"><span style="color:White;">Search</span></input>
+              </div>
+            </form>
+          </center>
+        </div>
+        <div class="col-sm-2">
+          <button onclick="logout()" id="Btnlogin"  type="button" name="button" class="btn btn-outline-light text-dark" style="margin-top:7px; float:right; border:1px solid #F35410; background-color:#F35410;"><span style="color:White;">Log Out</span></button>
+          <a onclick="profile()"><img src="https://www.gkipeterongan.org/wp-content/uploads/2019/01/user_circle_1048392.png" alt="" style="margin-top:7px; width:40px; cursor:pointer;"></a>          
+        </div>
+      </div>
+    </div>
+    <hr style="background-color:#13B1E2">
+
     <script>
       function logout(){
         window.location = "<?php echo base_url('index.php/TampilanAwal/logout');?>";
+      }
+      function back(){
+        window.location = "<?php echo base_url('index.php/Home/index');?>";
+      }
+      function profile(){
+        window.location = "<?php echo base_url('index.php/user/profile');?>";
       }
     </script>
   </body>

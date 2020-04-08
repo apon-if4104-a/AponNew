@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <title>Apon</title>
-    <?php include 'headerLogin.php';?>
+    <?php include 'headerUser.php';?>
     <style>
       #alamat:focus{
         outline:none;
@@ -32,26 +32,20 @@
           <div class="d-inline-flex p-3 ">
             <div class="p-2">Harga Barang</div>
             <div class="p-2">:</div>
-            <div class="p-2">RP 35.000,00</div>
-          </div>
-          <br>
-          <div class="d-inline-flex p-3">
-            <div class="p-2 ">Harga Ongkir</div>
-            <div class="p-2 ">:</div>
-            <div class="p-2 ">RP 12.000,00</div>
+            <div class="p-2"><?= $medic['Harga_Obat']; ?></div>
           </div>
           <br>
           <div class="d-inline-flex p-3">
             <div class="p-2 ">Jumlah Barang</div>
             <div class="p-2 ">:</div>
-            <div class="p-2 ">3</div>
+            <div class="p-2 "><?= $jumlah; ?></div>
           </div>
           <br>
           <br>
           <div class="d-inline-flex p-3">
             <div class="p-2 "><b>Total</b></div>
             <div class="p-2 "><b>:</b></div>
-            <div class="p-2 "><b>RP 47.000,00</b></div>
+            <div class="p-2 "><b id="total_harga"></b></div>
           </div>
           <br>
           <button id="BtnTransk" data-toggle="modal" data-target="#ONLINE" class="btn btn-light" type="button" name="button" style="width:250px; border:1px solid #13B1E2; margin-left:20px; margin-bottom:20px;"><span style="color:#13B1E2">Bayar Offline</span></button>
@@ -74,7 +68,7 @@
             <!-- Modal body -->
             <div class="modal-body">
               <center>
-                <button type="submit" class="btn btn-light" data-dismiss="modal" style="margin-right:10%; background-color:#F35410; padding:5px 20px 10px;"><span style="color:white">YA</span></button>
+                <button onclick="bayarOffline()" type="button" class="btn btn-light" data-dismiss="modal" style="margin-right:10%; background-color:#F35410; padding:5px 20px 10px;"><span style="color:white">YA</span></button>
                 <button id="TDKbtn" type="button" class="btn btn-light" data-dismiss="modal" style="border:1px solid #13B1E2;"><span style="color:#13B1E2;">Tidak</span></button>
               </center>
             </div>
@@ -97,7 +91,7 @@
             <!-- Modal body -->
             <div class="modal-body">
               <center>
-                <button type="submit" class="btn btn-light" data-dismiss="modal" style="margin-right:10%; background-color:#F35410; padding:5px 20px 10px;"><span style="color:white">YA</span></button>
+                <button id="btn-ya-offline" onclick="bayarOnline()" type="button" class="btn btn-light" data-dismiss="modal" style="margin-right:10%; background-color:#F35410; padding:5px 20px 10px;"><span style="color:white">YA</span></button>
                 <button id="TDKbtn" type="button" class="btn btn-light" data-dismiss="modal" style="border:1px solid #13B1E2;"><span style="color:#13B1E2;">Tidak</span></button>
               </center>
             </div>
@@ -124,10 +118,10 @@
                   <img src="file:///C:/Users/asus/Pictures/Nelco.png" alt="Icon" style="border:1px solid #F35410;">
                 </div>
                 <div class="col">
-                  <h3 style="margin-top:25px;">Nelco Syrup</h3>
-                  <h6 style="margin-top:20px;">Obat Batuk</h6>
-                  <h6 style="margin-top:20px;"><span style="color:#F35410;">Rp 35.000,00</span></h6>
-                  <p style="margin-top:20px;"><b>Jumlah : 1</b></p>
+                  <h3 style="margin-top:25px;"><?= $medic['Nama_Obat']; ?></h3>
+                  <h6 style="margin-top:20px;"><?= $medic['Keterangan_Obat']; ?></h6>
+                  <h6 style="margin-top:20px;"><span style="color:#F35410;"><?= $medic['Harga_Obat']; ?></span></h6>
+                  <p style="margin-top:20px;"><b><?=$jumlah?></b></p>
                 </div>
               </div>
             </div>
@@ -136,4 +130,27 @@
       </div>
     </div>
   </body>
+  <script type="text/javascript">
+    console.log('<?= $username;?>');
+    var harga = <?= $medic['Harga_Obat']; ?>;
+    var jumlah = <?= $jumlah ?>;
+    var total = harga*jumlah;
+    document.getElementById('total_harga').innerHTML = harga*jumlah;
+    function bayarOffline(){
+      console.log('// TEMP: ');
+      var namaObat = '<?= $medic['Nama_Obat']?>';
+      window.location = "<?php echo base_url('index.php/Home/bayarOffline/'.$medic['ID_Obat']);?>/"+total+"/<?=$jumlah?>";
+    }
+    function bayarOnline(){
+      console.log('// TEMP: ');
+      var namaObat = '<?= $medic['Nama_Obat']?>';
+      window.location = "<?php echo base_url('index.php/Home/bayarOnline/'.$medic['ID_Obat']);?>/"+total+"/<?=$jumlah?>";
+    }
+
+    var btn_ya_offline = document.getElementById("btn-ya-offline");
+    // btn_ya_offline.onclick = function(){
+    //   console.log("tees");
+    //   window.location = "<?php echo base_url('index.php/Home/bayarOffline/'.$medic['ID_Obat']);?>/"+total+"/<?=$jumlah?>";
+    // };
+  </script>
 </html>
